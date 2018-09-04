@@ -24,10 +24,72 @@ html, body{
 .header-toolbar{
     box-sizing: border-box;
 }
-.toolbar-button{
-    float: left;
-    position: relative;
+
+/* Sidebar section */
+.sidebar{
+    float: right;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient( white , black);
 }
+.sidebar-characters{
+    height: 37%;
+    overflow: auto;
+}
+.hero {
+    display: flex;
+    width: 20%;
+    float: left;
+}
+.hero img{
+    display: block;
+    width: 100%;
+}
+.patreon{
+    max-width: 100%;
+    max-height: auto; 
+}
+
+/* map and canvas section */
+.easel{
+    position: relative;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 80%;
+    height: 88%;
+}
+.canvas{
+    position: absolute;
+    z-index: 2;
+}
+.canvas img{
+    position: absolute;
+    z-index: 1;
+}
+.crosshair {
+    cursor: crosshair;
+}
+
+/* Dropdown Buttons section */
+.toolbar-btn, .closeBtn, .closeBtn2{
+    background-color: rgb(71, 68, 68);
+    color: white;
+    font-size: 16px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+.toolbar-btn:hover, .toolbar-btn:focus, 
+.closeBtn:hover, .closeBtn:focus,
+.closeBtn2:hover, .closeBtn2:focus {
+    background-color: #2980B9;
+}
+
+.toolbar-item{
+    position: relative;
+    display: inline-block;
+}
+
 .ddMapsBtn-content, .ddColorsBtn-content {
     display: none;
     position: absolute;
@@ -35,4 +97,46 @@ html, body{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 80;
+}
+
+.ddMapsBtn-content div {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+.colorLi{
+    padding: 16px 16px;
+    display: block;
+}
+    /* Dropdown section for color */
+    #colorLi-red{background-color: red;}
+    #colorLi-blue{background-color: blue;}
+    #colorLi-black{background-color: black;}
+    #colorLi-white{background-color: white;}
+
+/* Change color of dropdown links on hover */
+.ddMapsBtn-content li:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display:block;
+}
+
+/* used to measure the size of scrollbars and adjust the canvas */
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+/* map styling on selection */
+.small{
+    width: 100%; 
+    height: auto;
+}
+.mobile{
+    display: none;
 }
