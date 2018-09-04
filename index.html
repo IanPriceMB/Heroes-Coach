@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <head>
-            <title>Heroes Coach</title>
+            <title>MaddBuddha's Coaching Tools</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link rel="stylesheet" type="text/css" href="css/placement.css">
+            <link rel="stylesheet" type="text/css" href="css/header.css">
             <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -18,18 +18,50 @@
     <body>
         <header class="header">
             <div class="header-card">
-                <img class="header-card-logo" src="staticFiles/displayPics/logo.jpg" alt="logo" />
+                <img class="header-card-logo" src="staticFiles/displayPics/logo.png" alt="logo" />
                 <h4 class="header-card-title">
                     Heroes Coach
                 </h4>
             </div>  
             <toolbar class="header-toolbar">
-    
+                <button class="toolbar-btn" id='ddMapsBtn'>Maps</button>
+                    <div class="ddMapsBtn-content" id="mapdd">      
+                    <!-- maps go here-->
+                    </div>
+                <button class="toolbar-btn" id="ddColorsBtn">Colors</button>
+                <div class="ddColorsBtn-content" id="colordd" >
+                    <li class="colorLi" id="colorLi-red" data-color="red"></li>
+                    <li class="colorLi" id="colorLi-blue" data-color="blue"></li>
+                    <li class="colorLi" id="colorLi-black" data-color="black"></li>
+                    <li class="colorLi" id="colorLi-white" data-color="white"></li>
+                </div>
+        
+                <!-- these buttons dont have dropdowns -->
+                <button class="toolbar-btn" id="eraser" data-name="eraser">Eraser</button>
+            
+                <button class="toolbar-btn" id="lines">Reset Lines</button>
+            
+                <button class="toolbar-btn" id="clear">Reset Heroes</button>
+            
+                <button class="toolbar-btn" id="characters" data-name="hotkeys">Hotkeys</button>
+            
+                <button class="toolbar-btn" id="about" data-name="about">About</button>
+            
+                <button class="toolbar-btn" id="hotkeys" data-name="hotkeys">Hotkeys</button>
+                
             </toolbar>
         </header>
-        <map class="map">
+        <sidebar class="sidebar">
+            <a href="https://www.patreon.com/OverCoach" target="_blank"><img class="patreon" src="static/Patreon.png"></a>
+    
+            <div class="sidebar-characters" id="redCharacters"></div>
+            <div class="sidebar-characters" id="blueCharacters"></div>
+        </sidebar>
+        <div class="easel" id="easel">
+            <canvas class="canvas" id="canvas"></canvas>
+        </div>
 
-        </map>
         <script src="scripts/characters.js"></script>
+        <script src="scripts/draw.js"></script>
     </body>
 </html>
