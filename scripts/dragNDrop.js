@@ -64,7 +64,7 @@ $(document).ready(function(){
             }
         }
         let cw = $('.hero').width()/2;  
-        $(hero).attr('style', `position: absolute;top:${posY-cw/2}px;left:${posX-cw/2}px;z-index:3;width: 2%; height:${cw}px;`)
+        $(hero).attr('style', `position: absolute;top:${posY-cw/2}px;left:${posX-cw/2}px;z-index:3;width:${cw}px; height:${cw}px;`)
         $(hero).children().attr('style', `height:100%;width: 100%;`)
     }
 
@@ -84,7 +84,6 @@ $(document).ready(function(){
             $(this).addClass('blueHero')
         }
          
-        
         placeHero(this);
         $(easel).append(this)
     }

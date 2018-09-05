@@ -56,6 +56,9 @@ $('#maps').on('click', function(){
 $('#ddColorsBtn').on('click', function(){
     document.getElementById("colordd").classList.toggle("show");
 })
+$('#characters').on('click', function(){
+    document.getElementById("sidebar").classList.toggle("show");
+})
 //when you chose the map add it to the screen and match the canvas
 var img;
 $('.map-name').on('click', function(){
@@ -71,14 +74,15 @@ $('.map-name').on('click', function(){
       }
     
     $('#easel > img').attr("id", 'map')
-    $('#map').addClass('small')
+    $('#map').addClass('map-styling')
 })
+
 //some kind info
 $('#about').on('click', function(){
     if($('.about-div').length == 0){
         $('body').append('<div class="about-div">')
         $('.about-div').append('<p class="about-p">')
-        $('.about-p').html(`Hello there, I am MaddBuddha, a Masters Division player and shot caller for the team Off-Brand Cereal. I've also coached for several collegiate teams in
+        $('.about-p').html(`Hello there, I am MaddBuddha. A Masters division player and shot caller for the team Off-Brand Cereal. I've also coached for several collegiate teams in
         Heroes of the Dorm, League of Legends and DOTA2. I currently offer private lessons and I thought this was a great way to help my students learn!
         <br>
         <br>

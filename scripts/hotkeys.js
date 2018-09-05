@@ -52,7 +52,7 @@ $(document).on("keypress",function(e) {
         if($('.about-div').length == 0){
             $('body').append('<div class="about-div">')
             $('.about-div').append('<p class="about-p">')
-            $('.about-p').html(`Hello there, I am MaddBuddha, a Masters Division player and shot caller for the team Off-Brand Cereal. I've also coached for several collegiate teams in
+            $('.about-p').html(`Hello there, I am MaddBuddha. A Masters division player and shot caller for the team Off-Brand Cereal. I've also coached for several collegiate teams in
             Heroes of the Dorm, League of Legends and DOTA2. I currently offer private lessons and I thought this was a great way to help my students learn!
             <br>
             <br>
