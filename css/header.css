@@ -90,7 +90,7 @@ html, body{
     display: inline-block;
 }
 
-.ddMapsBtn-content, .ddColorsBtn-content {
+.maps-list, .ddColorsBtn-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -99,7 +99,7 @@ html, body{
     z-index: 80;
 }
 
-.ddMapsBtn-content div {
+.maps-list div {
     color: black;
     padding: 8px 16px;
     text-decoration: none;
@@ -117,7 +117,7 @@ html, body{
     #colorLi-white{background-color: white;}
 
 /* Change color of dropdown links on hover */
-.ddMapsBtn-content li:hover {background-color: #ddd}
+.maps-list li:hover {background-color: #ddd}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
@@ -139,4 +139,19 @@ html, body{
 }
 .mobile{
     display: none;
+}
+
+/* giving the heroes team colors */
+.redHero, .blueHero, .moved{
+    border-radius: 50%;
+    border: solid 2px;
+}
+.redHero>img, .blueHero>img, .moved>img{
+    border-radius: 50%;
+}
+.redHero{
+    border-color: red;
+}
+.blueHero{
+    border-color: blue;
 }

@@ -65,7 +65,7 @@ $(document).ready(function(){
         }
         let cw = $('.hero').width()/2;  
         $(hero).attr('style', `position: absolute;top:${posY-cw/2}px;left:${posX-cw/2}px;z-index:3;width: 2%; height:${cw}px;`)
-        $(hero).children().attr('style', `height:${cw}px`)
+        $(hero).children().attr('style', `height:$100%px;width: 100%;`)
     }
 
     // putting it all together
@@ -76,7 +76,14 @@ $(document).ready(function(){
        
         var position = getCanvasCoordinates(event);
         heroObj[hero] = new OnBoard(this, position)  
-        this.className = 'moved'; 
+        this.className = 'moved';
+        if($(this).attr('id').startsWith('red')){
+            $(this).addClass('redHero')
+        }
+        if($(this).attr('id').startsWith('blue')){
+            $(this).addClass('blueHero')
+        }
+         
         
         placeHero(this);
         $(easel).append(this)

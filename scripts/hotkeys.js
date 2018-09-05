@@ -38,7 +38,7 @@ $(document).on("keypress",function(e) {
 // m for maps
 $(document).on("keypress",function(e) {
     if(e.key == 'm') {
-        document.getElementById("mapdd").classList.toggle("show");
+        document.getElementById("maps-list").classList.toggle("show");
     }
 });
 // a for about section

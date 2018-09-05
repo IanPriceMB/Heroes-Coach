@@ -1,0 +1,24 @@
+{
+  "name": "Heroes-Coach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanPriceMB/Heroes-Coach.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanPriceMB/Heroes-Coach/issues"
+  },
+  "homepage": "https://github.com/IanPriceMB/Heroes-Coach#readme",
+  "dependencies": {
+    "nodemon": "^1.18.4"
+  }
+}

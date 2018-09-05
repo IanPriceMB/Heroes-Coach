@@ -34,14 +34,14 @@ const bluePath = 'staticFiles/heroPics/';
 $(document).ready(function(){
 //filling up the character zones
 for (let a = 0; a < charactersArr.length; a++){
-    $('#redCharacters').append('<div class="hero" id="red'+charactersArr[a]+'" data-name="red'+charactersArr[a]+'" move-target="red">');
+    $('#redCharacters').append('<div class="hero redHero" id="red'+charactersArr[a]+'" data-name="red'+charactersArr[a]+'" move-target="red">');
     let cw = $('.hero').width();
     $('#red'+ charactersArr[a]).append("<img id='redHero"+charactersArr[a]+"' data-name='redHero"+charactersArr[a]+"' move-target='red'>")
     $('#redHero'+charactersArr[a]).css({'height':cw+'px'});
     $("#redHero" + charactersArr[a]).attr("src", redPath+charactersArr[a]+'.png');
 }
 for (let b = 0; b < charactersArr.length; b++){
-    $('#blueCharacters').append('<div class="hero" id="blue'+charactersArr[b]+'" data-name="blue'+charactersArr[b]+'" move-target="blue">');
+    $('#blueCharacters').append('<div class="hero blueHero" id="blue'+charactersArr[b]+'" data-name="blue'+charactersArr[b]+'" move-target="blue">');
     let cw = $('.hero').width();
     $('#blue'+ charactersArr[b]).append("<img id='blueHero"+charactersArr[b]+"' data-name='blueHero"+charactersArr[b]+"' move-target='blue'>")
     $('#blueHero'+charactersArr[b]).css({'height':cw+'px'});
@@ -50,12 +50,12 @@ for (let b = 0; b < charactersArr.length; b++){
 
 //populating the map dropdown
 for (let c = 0; c < mapsArr.length; c++){
-    $("#mapdd").append("<div class='map-name' id='"+mapsArr[c]+"' data-img-src='" + mapPath + mapsArr[c] +".jpg'>")
+    $("#maps-list").append("<div class='map-name' id='"+mapsArr[c]+"' data-img-src='" + mapPath + mapsArr[c] +".jpg'>")
     $('#'+mapsArr[c]).text(mapsArr[c].replace(/_/g, " "));
 }
 // on click of the dropdown sections
-$('#ddMapsBtn').on('click', function(){
-    document.getElementById("mapdd").classList.toggle("show");
+$('#maps').on('click', function(){
+    document.getElementById("maps-list").classList.toggle("show");
 })
 $('#ddColorsBtn').on('click', function(){
     document.getElementById("colordd").classList.toggle("show");
@@ -63,7 +63,7 @@ $('#ddColorsBtn').on('click', function(){
 //when you chose the map add it to the screen and match the canvas
 var img;
 $('.map-name').on('click', function(){
-    document.getElementById("mapdd").classList.toggle("show");
+    document.getElementById("maps-list").classList.toggle("show");
     img = new Image();
     img.src = $(this).attr('data-img-src');
     
