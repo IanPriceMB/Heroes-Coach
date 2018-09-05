@@ -4,8 +4,13 @@ html, body{
     height: 100%;
     background: indigo;
 }
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 .header{
     display: flex;
+    align-items: center;
 }
 .header-card{
     box-sizing: content-box;
@@ -20,6 +25,8 @@ html, body{
     margin: 0;
     font-size: 1.5em;
     text-align: center;
+    padding-right: 20px;
+    color: white;
 }
 .header-toolbar{
     box-sizing: border-box;
@@ -27,21 +34,27 @@ html, body{
 
 /* Sidebar section */
 .sidebar{
+    width: 20vw;
     float: right;
-    width: 20%;
-    height: 100%;
-    background: linear-gradient( white , black);
+    height: calc(100vh - 10vh);
+    overflow: auto;
+    background: indigo;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 .sidebar-characters{
-    height: 37%;
-    overflow: auto;
+    width: 50%;
+    float: left;
 }
 .hero {
     display: flex;
-    width: 20%;
+    width: calc(100vw / 40);
+    height: calc(100vw / 40);
     float: left;
 }
-.hero img{
+.hero>img{
     display: block;
     width: 100%;
 }
@@ -55,8 +68,8 @@ html, body{
     position: relative;
     overflow-x: auto;
     overflow-y: auto;
-    width: 80%;
-    height: 88%;
+    width: 100;
+    height: calc(100vh - 10vh);
 }
 .canvas{
     position: absolute;
@@ -66,22 +79,17 @@ html, body{
     position: absolute;
     z-index: 1;
 }
-.crosshair {
-    cursor: crosshair;
-}
 
 /* Dropdown Buttons section */
 .toolbar-btn, .closeBtn, .closeBtn2{
-    background-color: rgb(71, 68, 68);
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 16px;
-    height: 100%;
     border: none;
     cursor: pointer;
 }
-.toolbar-btn:hover, .toolbar-btn:focus, 
-.closeBtn:hover, .closeBtn:focus,
-.closeBtn2:hover, .closeBtn2:focus {
+.toolbar-btn:hover,
+.closeBtn:hover,
+.closeBtn2:hover {
     background-color: #2980B9;
 }
 
@@ -90,7 +98,7 @@ html, body{
     display: inline-block;
 }
 
-.maps-list, .ddColorsBtn-content {
+.maps-list, .ddColorsBtn-content, sidebar {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -99,7 +107,7 @@ html, body{
     z-index: 80;
 }
 
-.maps-list div {
+.maps-list > div {
     color: black;
     padding: 8px 16px;
     text-decoration: none;
@@ -117,7 +125,7 @@ html, body{
     #colorLi-white{background-color: white;}
 
 /* Change color of dropdown links on hover */
-.maps-list li:hover {background-color: #ddd}
+.maps-list>div:hover {background-color: rgb(8, 156, 201)}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
@@ -140,7 +148,21 @@ html, body{
 .mobile{
     display: none;
 }
-
+/* the pop out section for the about-div */
+.about-div, .hotkey-div{
+    position: fixed;
+    top: 100px;
+    border: solid white 3px;
+    border-radius: 5px;
+    background-color: black;
+    width: 30%;
+    z-index: 1000;
+}
+.about-p, .hotkey-p{
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+}
 /* giving the heroes team colors */
 .redHero, .blueHero, .moved{
     border-radius: 50%;

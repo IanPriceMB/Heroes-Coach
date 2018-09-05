@@ -65,7 +65,7 @@ $(document).ready(function(){
         }
         let cw = $('.hero').width()/2;  
         $(hero).attr('style', `position: absolute;top:${posY-cw/2}px;left:${posX-cw/2}px;z-index:3;width: 2%; height:${cw}px;`)
-        $(hero).children().attr('style', `height:$100%px;width: 100%;`)
+        $(hero).children().attr('style', `height:100%;width: 100%;`)
     }
 
     // putting it all together
@@ -90,7 +90,7 @@ $(document).ready(function(){
     }
 
     // clicking the clear heroes button
-    $('#heroes').on('click', function(){
+    $('#clear').on('click', function(){
         $('.moved').remove();
         $('#redCharacters').empty();
         $('#blueCharacters').empty();

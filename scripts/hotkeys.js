@@ -41,6 +41,11 @@ $(document).on("keypress",function(e) {
         document.getElementById("maps-list").classList.toggle("show");
     }
 });
+$(document).on("keypress",function(e) {
+    if(e.key == 'c') {
+        document.getElementById("sidebar").classList.toggle("show");
+    }
+});
 // a for about section
 $(document).on("keypress",function(e) {
     if(e.key == 'a') {

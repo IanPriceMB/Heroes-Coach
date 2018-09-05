@@ -35,16 +35,12 @@ $(document).ready(function(){
 //filling up the character zones
 for (let a = 0; a < charactersArr.length; a++){
     $('#redCharacters').append('<div class="hero redHero" id="red'+charactersArr[a]+'" data-name="red'+charactersArr[a]+'" move-target="red">');
-    let cw = $('.hero').width();
     $('#red'+ charactersArr[a]).append("<img id='redHero"+charactersArr[a]+"' data-name='redHero"+charactersArr[a]+"' move-target='red'>")
-    $('#redHero'+charactersArr[a]).css({'height':cw+'px'});
     $("#redHero" + charactersArr[a]).attr("src", redPath+charactersArr[a]+'.png');
 }
 for (let b = 0; b < charactersArr.length; b++){
     $('#blueCharacters').append('<div class="hero blueHero" id="blue'+charactersArr[b]+'" data-name="blue'+charactersArr[b]+'" move-target="blue">');
-    let cw = $('.hero').width();
     $('#blue'+ charactersArr[b]).append("<img id='blueHero"+charactersArr[b]+"' data-name='blueHero"+charactersArr[b]+"' move-target='blue'>")
-    $('#blueHero'+charactersArr[b]).css({'height':cw+'px'});
     $("#blueHero" + charactersArr[b]).attr("src", bluePath+charactersArr[b]+'.png');
 }
 
