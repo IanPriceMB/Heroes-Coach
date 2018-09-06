@@ -120,7 +120,7 @@ $('#hotkeys').on('click', function(){
         T = Eraser<br><br>Ctrl+Click = Clear Hero From the Board<br><br>L = Clear All Lines<br><br>H = Reset All Heroes
         <br>
         <br>
-        C = Character Selection sScreen<br><br>B = Clear the Board<br><br>M = Maps List<br><br>A = About Popout<br><br>Z = Hotkeys
+        C = Character Selection Screen<br><br>B = Clear the Board<br><br>M = Maps List<br><br>A = About Popout<br><br>Z = Hotkeys
         <br>
         <br>`)
         $('.hotkey-div').append('<button class="closeBtn2">')

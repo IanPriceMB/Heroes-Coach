@@ -46,6 +46,39 @@ $(document).on("keypress",function(e) {
         document.getElementById("sidebar").classList.toggle("show");
     }
 });
+    // clear hotkeys
+    // l for lines
+    $(document).on("keypress",function(e) {
+        if(e.key == 'l') {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    });
+//if ctrl is pressed and a hero is clicked removed that hero from board and append it to it's section
+$(document).on("keydown",function(e) {
+    if(e.ctrlKey){
+        $('.moved').on('click', function(){
+            $(this).remove();
+
+            $(this).removeAttr('style')
+            if($(this).attr('move-target')=='red'){
+                $('#redCharacters').append(this);
+                this.className = 'hero'
+                let cw = $('.hero').width();
+                $(this).children().css({'height':cw+'px'})
+                if($(this).attr('id').startsWith('red')){
+                    $(this).addClass('redHero')
+                }
+            } else{
+                $('#blueCharacters').append(this);
+                this.className = 'hero'
+                let cw = $('.hero').width();
+                if($(this).attr('id').startsWith('blue')){
+                    $(this).addClass('blueHero')
+                }
+            }
+        })
+    }
+});
 // a for about section
 $(document).on("keypress",function(e) {
     if(e.key == 'a') {
@@ -90,7 +123,7 @@ $(document).on("keypress",function(e) {
             T = Eraser<br><br>Ctrl+Click = Clear Hero From the Board<br><br>L = Clear All Lines<br><br>H = Reset All Heroes
             <br>
             <br>
-            C = Character Selection sScreen<br><br>B = Clear the Board<br><br>M = Maps List<br><br>A = About Popout<br><br>Z = Hotkeys
+            C = Character Selection Screen<br><br>B = Clear the Board<br><br>M = Maps List<br><br>A = About Popout<br><br>Z = Hotkeys
             <br>
             <br>`)
             $('.hotkey-div').append('<button class="closeBtn2">')
