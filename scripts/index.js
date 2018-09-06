@@ -7,6 +7,7 @@ const mapsArr=
     "Cursed_Hollow",
     "Dragon_Shire",
     "Garden_of_Terror",
+    "Hanamura",
     "Haunted_Mines",
     "Infernal_Shrines",
     "Sky_Temple",
@@ -21,7 +22,7 @@ const charactersArr = [
 'dehaka', 'diablo', 'etc', 'falstad', 'fenix', 'garrosh', 'gazlowe', 'genji', 'greymane',
 'guldan', 'hanzo', 'illidan', 'jaina', 'johanna', 'junkrat', 'kaelthas', 'kelthuzad', 'kerrigan',
 'kharazim', 'leoric', 'li-li', 'li-ming', 'lt-morales', 'lucio', 'lunara', 'maiev', 'malfurion', 
-'malthael', 'medivh', 'muradin', 'murky', 'nazeebo', 'nova', 'probius', 'ragnaros', 'raynor', 
+'malthael', 'medivh', 'mephisto', 'muradin', 'murky', 'nazeebo', 'nova', 'probius', 'ragnaros', 'raynor', 
 'rehgar', 'rexxar', 'samuro', 'sgt-hammer', 'sonya', 'stitches', 'stukov', 'sylvanas', 'tassadar',
 'the-butcher', 'the-lost-vikings', 'thrall', 'tracer', 'tychus', 'tyrael', 'tyrande', 'uther',
 'valeera', 'valla', 'varian', 'whitemane', 'xul', 'yrel', 'zagara', 'zarya', 'zeratul', 'zuljin' 
