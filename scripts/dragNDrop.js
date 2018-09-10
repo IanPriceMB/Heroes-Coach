@@ -2,7 +2,7 @@ $(document).ready(function(){
     // establishing variables that we will be using a lot of later on in the code.
     var easel = document.getElementById('easel');
 
-    //this is used for validation later
+    //creating a set of characters that have red and blue tags for targeting
     var allCharacters = [];
     function run(){
         for (i = 0; i < charactersArr.length; i ++){
@@ -22,9 +22,9 @@ $(document).ready(function(){
     }
     dragability();
 
-    //pretty sure this just has to exist but i don't need it
+    //pretty sure this just has to exist but i doesn't do anything
     function heroStart(){
-        
+        console.log('wheeeee!')
     }
 
     //get mouse positioning
@@ -34,38 +34,6 @@ $(document).ready(function(){
 
         return {x: x, y: y};
         
-    }
-
-    //for dynamically creating heroes obj and the heroes inside of it
-    var heroObj ={};
-    var hero;
-    OnBoard = function (heroDiv, pos){
-        //some targeters
-        this.name = $(heroDiv).attr('data-name');
-        this.id = $(heroDiv).children().attr('data-name');
-
-        //some math for positioning
-        this.posX = pos.x;
-        this.posY = pos.y;
-    }
-
-    // place the hero with it's specific measurements
-    function placeHero(hero){
-        var posX;
-        var posY;
-        for (var i = 0; i < allCharacters.length; i++){
-            if(allCharacters[i]===$(hero).attr('data-name')){
-                for (key in heroObj){
-                    if(allCharacters[i] == heroObj[key].name){
-                        posX = heroObj[key].posX
-                        posY = heroObj[key].posY
-                    }
-                }
-            }
-        }
-        let cw = $('.hero').width()/2;  
-        $(hero).attr('style', `position: absolute;top:${posY-cw/2}px;left:${posX-cw/2}px;z-index:3;width:${cw}px; height:${cw}px;`)
-        $(hero).children().attr('style', `height:100%;width: 100%;`)
     }
 
     // putting it all together
@@ -83,9 +51,50 @@ $(document).ready(function(){
         if($(this).attr('id').startsWith('blue')){
             $(this).addClass('blueHero')
         }
-         
+        
+        //after dynamically creating a hero div that containes personal coordinates for moving around the map
+        //palce hero, this reruns every time it is moved
         placeHero(this);
         $(easel).append(this)
+    }    
+    
+    //for dynamically creating heroes obj and the heroes inside of it
+    //give coordinates to position
+    var heroObj ={};
+    var hero;
+    OnBoard = function (heroDiv, pos){
+        //some targeters
+        this.name = $(heroDiv).attr('data-name');
+        this.id = $(heroDiv).children().attr('data-name');
+
+        //some math for positioning
+        this.posX = pos.x;
+        this.posY = pos.y;
+    }
+
+    
+    // place the hero with it's specific measurements
+    //find the hero you have selected from her
+    function placeHero(hero){
+        var posX;
+        var posY;
+
+        //making sure you are only movig the proper character
+        for (var i = 0; i < allCharacters.length; i++){
+            if(allCharacters[i]===$(hero).attr('data-name')){
+                for (key in heroObj){
+                    if(allCharacters[i] == heroObj[key].name){
+                        posX = heroObj[key].posX
+                        posY = heroObj[key].posY
+                    }
+                }
+            }
+        }
+        
+        //attributing the position to the div via inline styleing
+        let cw = $('.hero').width()/2;  
+        $(hero).attr('style', `position: absolute;top:${posY-cw/2}px;left:${posX-cw/2}px;z-index:3;width:${cw}px; height:${cw}px;`)
+        $(hero).children().attr('style', `height:100%;width: 100%;`)
     }
 
     // clicking the clear heroes button
@@ -97,6 +106,7 @@ $(document).ready(function(){
         blueCharactersPop();
         dragability();
     })
+    
     //random functions seperated out cause nice
     function redCharactersPop(){
         for (let a = 0; a < charactersArr.length; a++){
@@ -112,6 +122,8 @@ $(document).ready(function(){
             $("#blueHero" + charactersArr[b]).attr("src", bluePath+charactersArr[b]+'.png');
         }
     }
+    
+    //easier to put some hotkeys here than move all their functions
     // h for heroes
     $(document).on("keypress",function(e) {
         if(e.key == 'h') {

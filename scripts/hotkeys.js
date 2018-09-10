@@ -27,6 +27,41 @@ $(document).on("keypress",function(e) {
         mode='pen';
     }
 });
+// r for red
+$(document).on("keypress",function(e) {
+    if(e.key == '1') {
+        x='purple';
+        mode='pen';
+    }
+});
+// r for red
+$(document).on("keypress",function(e) {
+    if(e.key == '2') {
+        x='green';
+        mode='pen';
+    }
+});
+// r for red
+$(document).on("keypress",function(e) {
+    if(e.key == '3') {
+        x='pink';
+        mode='pen';
+    }
+});
+// r for red
+$(document).on("keypress",function(e) {
+    if(e.key == '4') {
+        x='orange';
+        mode='pen';
+    }
+});
+// r for red
+$(document).on("keypress",function(e) {
+    if(e.key == '5') {
+        x='yellow';
+        mode='pen';
+    }
+});
 // though this is for the eraser
 // t for eraser
 $(document).on("keypress",function(e) {
@@ -38,7 +73,7 @@ $(document).on("keypress",function(e) {
 // m for maps
 $(document).on("keypress",function(e) {
     if(e.key == 'm') {
-        document.getElementById("maps-list").classList.toggle("show");
+        document.getElementById("map-list").classList.toggle("show");
     }
 });
 $(document).on("keypress",function(e) {
@@ -86,10 +121,10 @@ $(document).on("keypress",function(e) {
             $('body').append('<div class="about-div">')
             $('.about-div').append('<p class="about-p">')
             $('.about-p').html(`Hello there, I am MaddBuddha. A Masters division player and shot caller for the team Off-Brand Cereal. I've also coached for several collegiate teams in
-            Heroes of the Dorm, League of Legends and DOTA2. I currently offer private lessons and I thought this was a great way to help my students learn!
+            Heroes of the Dorm, League of Legends and DOTA2. I currently offer private lessons, and I thought this tool would be a great way to help my students learn!
             <br>
             <br>
-            If you support this project on patreon I will continue to update it and make it a little better every day. The more money you pledge, the better the updates will be.
+            If you support this project on Patreon I will continue to update it and make it a little better as time goes on. The more money you pledge, the better the updates will be.
             I have a lot of plans for the future already! So, if you are really like this tool then please consider supporting the project.
             <br>
             <br>
@@ -117,15 +152,23 @@ $(document).on("keypress",function(e) {
         if($('.hotkey-div').length == 0){
             $('body').append('<div class="hotkey-div">')
             $('.hotkey-div').append('<p class="hotkey-p">')
-            $('.hotkey-p').html(`Q = Black Pen<br><br>W = White Pen<br><br>E = Blue Pen<br><br>R = Red Pen
-            <br>
-            <br>
-            T = Eraser<br><br>Ctrl+Click = Clear Hero From the Board<br><br>L = Clear All Lines<br><br>H = Reset All Heroes
-            <br>
-            <br>
-            C = Character Selection Screen<br><br>B = Clear the Board<br><br>M = Maps List<br><br>A = About Popout<br><br>Z = Hotkeys
-            <br>
-            <br>`)
+            $('.hotkey-p').html(`
+            <h3>Pen Colors & Eraser</h3>
+            Q = Black | W = White | E = Blue | R = Red
+            <br><br>
+            1 = Purple | 2 = Green | 3 = Pink | 4 = Orange | 5 = Yellow
+            <br><br>
+            T = Eraser | L = Clear All Lines
+            <h3>Hero Control Tools</h3>
+            H = Reset All Heroes<br><br>
+            Ctrl + Click = Clear Hero From the Board<br><br>
+            C = Character Selection Screen
+            <h3>Miscellaneous Tools</h3>
+            B = Full Clear the Board<br><br>
+            M = Maps List<br><br>
+            A = About Popout<br><br>
+            Z = Hotkeys Popout<br><br>
+            `)
             $('.hotkey-div').append('<button class="closeBtn2">')
             $('.closeBtn2').text('close')
         } else {

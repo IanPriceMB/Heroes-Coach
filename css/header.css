@@ -2,11 +2,15 @@ html, body{
     width: 100%;
     height: 100%;
     background: indigo;
+    margin: 0;
 }
 html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 }
+
+/* ----------------------------------------------------------------------------------------------- */
+/* this is the header section */
 .header{
     display: flex;
     align-items: center;
@@ -17,12 +21,12 @@ html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar 
     align-items: center;
 }
 .header-card-logo{
-    width: 10vh;
+    width: 5vh;
     height: auto;
+    margin: 2.3vh;
 }
 .header-card-title{
     margin: 0;
-    font-size: 1.5em;
     text-align: center;
     padding-right: 20px;
     color: white;
@@ -30,10 +34,17 @@ html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar 
 .header-toolbar{
     box-sizing: border-box;
 }
+.patreon{
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    width: 20vw;
+}
 
+/* ---------------------------------------------------------------------------------------------- */
 /* Sidebar section */
 .sidebar{
-    width: 20vw;
+    width: calc(7 * calc(100vw / 40));
     float: right;
     height: calc(100% - 10vh);
     overflow: auto;
@@ -42,8 +53,9 @@ html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar 
 .sidebar-characters{
     width: 50%;
     float: left;
+    align-items: center;
 }
-.hero {
+.hero{
     display: flex;
     width: calc(100vw / 40);
     height: calc(100vw / 40);
@@ -53,39 +65,43 @@ html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar 
     display: block;
     width: 100%;
 }
-.patreon{
-    max-width: 100%;
-    max-height: auto; 
-}
 
+/* ----------------------------------------------------------------------------------------------- */
 /* map and canvas section */
+/* this part is how we target gud :D */
 .easel{
     position: relative;
-    overflow-x: auto;
     overflow-y: auto;
     width: 100%;
     height: calc(100% - 10vh);
 }
 .canvas{
     position: absolute;
-    z-index: 2;
 }
-.canvas img{
-    position: absolute;
-    z-index: 1;
+/* map styling on selection */
+.map-styling{
+    width: 100%; 
 }
 
+/* ---------------------------------------------------------------------------------------------- */
 /* Dropdown Buttons section */
 .toolbar-btn, .closeBtn, .closeBtn2{
-    color: rgb(0, 0, 0);
+    color: black;
+    padding: 10px;
+    margin: 1px;
+    border-radius: 10px;
+    background-color: turquoise;
     font-size: 16px;
     border: none;
     cursor: pointer;
 }
+.closeBtn, .closeBtn2{
+    margin: 0 0 10px 20px;
+}
 .toolbar-btn:hover,
 .closeBtn:hover,
 .closeBtn2:hover {
-    background-color: #2980B9;
+    background-color: rgb(8, 156, 201);
 }
 
 .toolbar-item{
@@ -98,52 +114,41 @@ html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar 
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 80;
 }
 
 .maps-list > div {
     color: black;
     padding: 8px 16px;
-    text-decoration: none;
     display: block;
     cursor: pointer;
 }
 .colorLi{
-    padding: 16px 16px;
+    padding: 16px;
     display: block;
+    cursor: pointer;
 }
     /* Dropdown section for color */
     #colorLi-red{background-color: red;}
     #colorLi-blue{background-color: blue;}
     #colorLi-black{background-color: black;}
     #colorLi-white{background-color: white;}
+    #colorLi-purple{background-color: purple;}
+    #colorLi-green{background-color: green;}
+    #colorLi-pink{background-color: pink;}
+    #colorLi-orange{background-color: orange;}
+    #colorLi-yellow{background-color: yellow;}
 
 /* Change color of dropdown links on hover */
 .maps-list>div:hover {background-color: rgb(8, 156, 201)}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+/* show/hide the dropdowns */
 .show {
     display:block;
 }
 
-/* used to measure the size of scrollbars and adjust the canvas */
-.scrollbar-measure {
-    width: 100px;
-    height: 100px;
-    overflow: scroll;
-    position: absolute;
-    top: -9999px;
-}
-/* map styling on selection */
-.map-styling{
-    width: 100%; 
-    height: auto;
-}
-.mobile{
-    display: none;
-}
-/* the pop out section for the about-div */
+/* ------------------------------------------------------------------------------------------------------ */
+/* the pop out section for the about-div and hotkey div and gives them a bit of styling */
 .about-div, .hotkey-div{
     position: fixed;
     top: 100px;
@@ -156,9 +161,11 @@ html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .easel::-webkit-scrollbar 
 .about-p, .hotkey-p{
     color: white;
     width: 90%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
-/* giving the heroes team colors */
+
+/* --------------------------------------------------------------------------------------------------------- */
+/* giving the heroes team colors & making them circular */
 .redHero, .blueHero, .moved{
     border-radius: 50%;
     border: solid 2px;

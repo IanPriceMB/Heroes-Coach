@@ -47,12 +47,12 @@ for (let b = 0; b < charactersArr.length; b++){
 
 //populating the map dropdown
 for (let c = 0; c < mapsArr.length; c++){
-    $("#maps-list").append("<div class='map-name' id='"+mapsArr[c]+"' data-img-src='" + mapPath + mapsArr[c] +".jpg'>")
+    $("#map-list").append("<div class='map-name' id='"+mapsArr[c]+"' data-img-src='" + mapPath + mapsArr[c] +".jpg'>")
     $('#'+mapsArr[c]).text(mapsArr[c].replace(/_/g, " "));
 }
 // on click of the dropdown sections
 $('#maps').on('click', function(){
-    document.getElementById("maps-list").classList.toggle("show");
+    document.getElementById("map-list").classList.toggle("show");
 })
 $('#ddColorsBtn').on('click', function(){
     document.getElementById("colordd").classList.toggle("show");
@@ -63,7 +63,7 @@ $('#characters').on('click', function(){
 //when you chose the map add it to the screen and match the canvas
 var img;
 $('.map-name').on('click', function(){
-    document.getElementById("maps-list").classList.toggle("show");
+    document.getElementById("map-list").classList.toggle("show");
     img = new Image();
     img.src = $(this).attr('data-img-src');
     
@@ -77,17 +77,24 @@ $('.map-name').on('click', function(){
     $('#easel > img').attr("id", 'map')
     $('#map').addClass('map-styling')
 })
-
+//an extra function for matching the canvas
+function matchCanvas(image) {
+    var myCanvas = document.getElementById("canvas");
+    myCanvas.width = image.width
+    myCanvas.height = image.height
+    init();
+}
+    
 //some kind info
 $('#about').on('click', function(){
     if($('.about-div').length == 0){
         $('body').append('<div class="about-div">')
         $('.about-div').append('<p class="about-p">')
         $('.about-p').html(`Hello there, I am MaddBuddha. A Masters division player and shot caller for the team Off-Brand Cereal. I've also coached for several collegiate teams in
-        Heroes of the Dorm, League of Legends and DOTA2. I currently offer private lessons and I thought this was a great way to help my students learn!
+        Heroes of the Dorm, League of Legends and DOTA2. I currently offer private lessons, and I thought this tool would be a great way to help my students learn!
         <br>
         <br>
-        If you support this project on patreon I will continue to update it and make it a little better every day. The more money you pledge, the better the updates will be.
+        If you support this project on Patreon I will continue to update it and make it a little better as time goes on. The more money you pledge, the better the updates will be.
         I have a lot of plans for the future already! So, if you are really like this tool then please consider supporting the project.
         <br>
         <br>
@@ -115,15 +122,23 @@ $('#hotkeys').on('click', function(){
     if($('.hotkey-div').length == 0){
         $('body').append('<div class="hotkey-div">')
         $('.hotkey-div').append('<p class="hotkey-p">')
-        $('.hotkey-p').html(`Q = Black Pen<br><br>W = White Pen<br><br>E = Blue Pen<br><br>R = Red Pen
-        <br>
-        <br>
-        T = Eraser<br><br>Ctrl+Click = Clear Hero From the Board<br><br>L = Clear All Lines<br><br>H = Reset All Heroes
-        <br>
-        <br>
-        C = Character Selection Screen<br><br>B = Clear the Board<br><br>M = Maps List<br><br>A = About Popout<br><br>Z = Hotkeys
-        <br>
-        <br>`)
+        $('.hotkey-p').html(`
+        <h3>Pen Colors & Eraser</h3>
+        Q = Black | W = White | E = Blue | R = Red
+        <br><br>
+        1 = Purple | 2 = Green | 3 = Pink | 4 = Orange | 5 = Yellow
+        <br><br>
+        T = Eraser | L = Clear All Lines
+        <h3>Hero Control Tools</h3>
+        H = Reset All Heroes<br><br>
+        Ctrl + Click = Clear Hero From the Board<br><br>
+        C = Character Selection Screen
+        <h3>Miscellaneous Tools</h3>
+        B = Full Clear the Board<br><br>
+        M = Maps List<br><br>
+        A = About Popout<br><br>
+        Z = Hotkeys Popout<br><br>
+        `)
         $('.hotkey-div').append('<button class="closeBtn2">')
         $('.closeBtn2').text('close')
     } else {
@@ -134,10 +149,3 @@ $(document).on("click", ".closeBtn2", function() {
     $(".hotkey-div").remove();
 });
 });
-//an extra function for matching the canvas
-function matchCanvas(image) {
-var myCanvas = document.getElementById("canvas");
-myCanvas.width = image.width
-myCanvas.height = image.height
-init();
-}
